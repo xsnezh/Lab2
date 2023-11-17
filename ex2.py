@@ -11,15 +11,6 @@
 Автор: Новосад Сніжана
 """
 
-def n (a, b, c, d, e):
-    # Перевіряємо, чи зможе в'язень викидати цеглини через отвір
-    if (a <= d and b <= e) or (b <= d and a <= e) or \
-       (a <= d and c <= e) or (c <= d and a <= e) or \
-       (b <= d and c <= e) or (c <= d and b <= e):
-        return "Yes"
-    else:
-        return "No"
-
 # Введення розмірів цегли та отвору від користувача
 a = int(input("Введіть розмір a цегли: "))
 b = int(input("Введіть розмір b цегли: "))
@@ -27,6 +18,13 @@ c = int(input("Введіть розмір c цегли: "))
 d = int(input("Введіть розмір d отвору: "))
 e = int(input("Введіть розмір e отвору: "))
 
-# Виведення результату
-результат = n(a, b, c, d, e)
-print(результат)
+
+# Перевірка можливості викидання цеглин
+if (a <= d and b <= e) or (b <= d and a <= e):
+    print("Yes")
+elif (a <= d and c <= e) or (c <= d and a <= e):
+    print("Yes")
+elif (b <= d and c <= e) or (c <= d and b <= e):
+    print("Yes")
+else:
+    print("No")
